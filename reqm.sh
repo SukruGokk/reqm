@@ -111,6 +111,7 @@ do
             # save request
             elif [[ ${input} = *"save"* ]]; then
                 file=$(echo $input | cut -d' ' -f 2)
+                mkdir -p ".presets"
                 
                 for i in "${!arguments[@]}"
                 do
