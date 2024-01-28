@@ -35,9 +35,9 @@ do
             if [[ ! "${arguments[data]}" = "None" ]]; then
                 string+=" -d '${arguments[data]}'"
             fi
-            if [[ ! "$header" = "None" ]]; then
+            if [[ ! "${arguments[headers]}" = "None" ]]; then
                 IFS=',' read -r -a array <<< "${arguments[headers]}"
-                for header in "$array"
+                for header in "$array[@]"
                 do
                     string+=" -H \"$(echo $header | xargs)\""
                 done
